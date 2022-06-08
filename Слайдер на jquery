@@ -1,0 +1,40 @@
+$(document).ready(function () {   // обьявление слайдера
+    $('.cards__block').slick({   // обращение к классу .cards__block
+        arrows: false,
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        responsive: [               // адаптация
+
+            {
+                breakpoint: 900,    // 1 точка адаптации 900px
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 768,        //// 2 точка адаптации 768px
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 576,       // 3 точка адаптации 576px
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
+})
