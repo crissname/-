@@ -1,0 +1,23 @@
+//  Открітие и закрытие подменю при нажатие ссылку и Добавление класса актив стрелк
+    $('.menu__first-link').click(function () {
+        if (!$(this).hasClass('active')) {
+            $(".menu__first-link").find('.menu__sublist').slideUp();
+            $('.menu__first-link').removeClass('active');
+            $(".menu__first-link").children('.menu__arrow').removeClass('_active');
+            $(this).find('.menu__sublist').slideToggle();
+            $(this).addClass('active');
+            $(this).children('.menu__arrow').addClass('_active');
+        } else {
+            $('.menu__first-link').removeClass('active');
+            $(".menu__first-link").find('.menu__sublist').slideUp()
+            $(".menu__first-link").children('.menu__arrow').removeClass('_active');
+        }
+    });
+
+    $(document).mouseup(function (e) {
+        if (!$('.menu__first-link').is(e.target) && $('.menu__first-link').has(e.target).length === 0) {
+            $('.menu__first-link').removeClass('active');
+            $('.menu__first-link').children('.menu__arrow').removeClass('_active');
+            $(".menu__first-link").find('.menu__sublist').slideUp()
+        }
+    });
